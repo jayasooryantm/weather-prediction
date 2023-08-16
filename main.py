@@ -1,1 +1,3 @@
-from src.weather-prediction.__init__ import logger
+from weather_prediction import logger
+
+print(logger.info("Logging information"))
