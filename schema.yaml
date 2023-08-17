@@ -1,1 +1,12 @@
-key: val
+column_datatypes:
+    Wind Direction(compass): int
+    Wind Gust(mph): float
+    Screen Relative Humidity(%): float
+    Pressure(hpa): float
+    Wind Speed(mph): float
+    Temperature(C): float
+    Visibility(m): float
+    Weather Type: int
+    Pressure Tendency: int
+    Dew Point(C): float
+    Minutes Since 12o Clock: int

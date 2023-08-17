@@ -16,6 +16,13 @@ class DataIngestion:
         self.config = config
 
     def download_file(self):
+        """
+        Download zip file using api
+        :arg:
+            None
+        :return:
+            None
+        """
         if not os.path.exists(self.config.local_data_file):
             filename, headers = rq.urlretrieve(
                 url = self.config.source_url,
@@ -29,9 +36,9 @@ class DataIngestion:
         """
         Extracts the zip file into the data directory
 
-        args:
+        arg:
             zip_file_path:str
-        returns:
+        return:
             None
         """
         unzip_path = self.config.unzip_dir
