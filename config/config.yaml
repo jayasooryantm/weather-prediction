@@ -11,4 +11,3 @@ data_validation:
   unzip_data_dir: artifacts/data_ingestion/data
   dataset_file: artifacts/data_validation/weather_data.csv
   STATUS_FILE: artifacts/data_validation/status.txt
-

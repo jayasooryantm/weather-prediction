@@ -11,6 +11,7 @@ class DataValidationPipeline:
         data_validation = DataValidation(data_validation_config)
         weather_data = data_validation.json_to_dataframe()
         data_validation.clean_dataframe(weather_data)
+        data_validation.validate_data_columns()
 
 if __name__ == "__main__":
     data_validation_pipeline = DataValidationPipeline()

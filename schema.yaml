@@ -1,12 +1,50 @@
-column_datatypes:
-    Wind Direction(compass): int
-    Wind Gust(mph): float
-    Screen Relative Humidity(%): float
-    Pressure(hpa): float
-    Wind Speed(mph): float
-    Temperature(C): float
-    Visibility(m): float
-    Weather Type: int
-    Pressure Tendency: int
-    Dew Point(C): float
-    Minutes Since 12o Clock: int
+data_validation:
+    data_headers:
+        D: Wind Direction(compass)
+        G: Wind Gust(mph)
+        H: Screen Relative Humidity(%)
+        P: Pressure(hpa)
+        S: Wind Speed(mph)
+        T: Temperature(C)
+        V: Visibility(m)
+        W: Weather Type
+        Pt: Pressure Tendency
+        Dp: Dew Point(C)
+        $: Minutes Since 12o Clock
+
+    compass_directions_map:
+        N: 1
+        NNE: 2
+        NE: 3
+        ENE: 4
+        E: 5
+        ESE: 6
+        SE: 7
+        SSE: 8
+        S: 9
+        SSW: 10
+        SW: 11
+        WSW: 12
+        W: 13
+        WNW: 14
+        NW: 15
+        NNW: 16
+
+    Pressure_tendency_map:
+        F: 0
+        R: 1
+        S: 2
+
+    column_datatypes:
+        Wind Direction(compass): int
+        Wind Gust(mph): float
+        Screen Relative Humidity(%): float
+        Pressure(hpa): float
+        Wind Speed(mph): float
+        Temperature(C): float
+        Visibility(m): float
+        Weather Type: int
+        Pressure Tendency: int
+        Dew Point(C): float
+        Minutes Since 12o Clock: int
+        date: object

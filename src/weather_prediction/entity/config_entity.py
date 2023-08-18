@@ -22,3 +22,7 @@ class DataValidationConfig:
     unzip_data_dir: Path
     dataset_file: Path
     STATUS_FILE: Path
+    data_headers: dict
+    compass_directions_map: dict
+    Pressure_tendency_map: dict
+    column_datatypes: dict

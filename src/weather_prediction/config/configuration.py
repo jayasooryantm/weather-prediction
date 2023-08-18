@@ -32,6 +32,7 @@ class ConfigurationManager:
 
     def get_data_validation_config(self) -> DataValidationConfig:
         config = self.config.data_validation
+        schema = self.schema.data_validation
 
         create_directories([config.root_dir])
 
@@ -39,6 +40,10 @@ class ConfigurationManager:
             root_dir=config.root_dir,
             unzip_data_dir=config.unzip_data_dir,
             dataset_file=config.dataset_file,
-            STATUS_FILE=config.STATUS_FILE
+            STATUS_FILE=config.STATUS_FILE,
+            data_headers=schema.data_headers,
+            compass_directions_map=schema.compass_directions_map,
+            Pressure_tendency_map=schema.Pressure_tendency_map,
+            column_datatypes=schema.column_datatypes
         )
         return data_validation_config
