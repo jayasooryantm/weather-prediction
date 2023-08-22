@@ -41,10 +41,7 @@ class DataValidation:
         weather_data['date'] = weather_data['date'].str.replace('Z','')
         weather_data = weather_data.astype(self.config.column_datatypes)
         weather_data['date'] = pd.to_datetime(weather_data['date'], format='%Y-%m-%d')
-        #weather_data['day'] = weather_data['date'].dt.day
-        #weather_data['month'] = weather_data['date'].dt.month
-        #weather_data['year'] = weather_data['date'].dt.year
-        #weather_data.drop('date', axis=1, inplace=True)
+
         logger.info("Dataframe cleaned, saving to csv...")
         weather_data.to_csv(self.config.dataset_file, index=False)
 

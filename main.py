@@ -1,6 +1,8 @@
 from weather_prediction import logger
 from weather_prediction.pipeline.stage_01_data_ingestion import DataIngestionPipeline
 from weather_prediction.pipeline.stage_02_data_validation import DataValidationPipeline
+from weather_prediction.pipeline.stage_03_data_transformation import DataTransformationPipeline
+from weather_prediction.pipeline.stage_04_model_training import ModelTrainingPipeline
 
 
 if __name__ == "__main__":
@@ -21,3 +23,22 @@ if __name__ == "__main__":
     except Exception as e:
         logger.exception(e)
         raise e
+
+    try:
+        transformation_pipeline = DataTransformationPipeline()
+        logger.info(f">>>>>>>>>> Running: {transformation_pipeline.stage_name} <<<<<<<<<<")
+        transformation_pipeline.run_transformation()
+        logger.info(f">>>>>>>>>> Completed: {transformation_pipeline.stage_name} <<<<<<<<<<")
+    except Exception as e:
+        logger.exception(e)
+        raise e
+
+    try:
+        training_pipeline = ModelTrainingPipeline()
+        logger.info(f">>>>>>>>>> Running: {training_pipeline.stage_name} <<<<<<<<<<")
+        training_pipeline.run_training()
+        logger.info(f">>>>>>>>>> Completed: {training_pipeline.stage_name} <<<<<<<<<<")
+    except Exception as e:
+        logger.exception(e)
+        raise e
+

@@ -48,3 +48,11 @@ data_validation:
         Dew Point(C): float
         Minutes Since 12o Clock: int
         date: object
+
+data_transformation:
+    target_variables: ['Wind Direction(compass)', 'Pressure(hpa)', 'Wind Speed(mph)', 'Temperature(C)', 'Visibility(m)', 'Weather Type']
+    target_column_names: ['Wind Direction(compass) (t+1)', 'Pressure(hpa) (t+1)', 'Wind Speed(mph) (t+1)', 'Temperature(C) (t+1)', 'Visibility(m) (t+1)', 'Weather Type (t+1)']
+
+model_trainer:
+    feature_columns_names: ['Wind Direction(compass)', 'Wind Gust(mph)', 'Screen Relative Humidity(%)', 'Pressure(hpa)', 'Wind Speed(mph)', 'Temperature(C)', 'Visibility(m)', 'Weather Type', 'Pressure Tendency', 'Dew Point(C)', 'Minutes Since 12o Clock', 'day', 'month', 'year']
+    target_column_names: ['Wind Direction(compass) (t+1)', 'Pressure(hpa) (t+1)', 'Wind Speed(mph) (t+1)', 'Temperature(C) (t+1)', 'Visibility(m) (t+1)', 'Weather Type (t+1)']

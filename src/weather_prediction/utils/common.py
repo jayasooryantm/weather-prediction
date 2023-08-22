@@ -8,6 +8,8 @@ from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
+import torch
+from torch.nn import Module
 
 
 @ensure_annotations
@@ -120,6 +122,29 @@ def get_size(path: Path) -> str:
     size_in_kb = round(os.path.getsize(path) / 1024)
     return f"~ {size_in_kb} KB"
 
+@ensure_annotations
+def save_torch_model(model: Module, destination:str):
+    """
+    save PyTorch model to destination path.
 
+    :param model: model object
+    :param destination: filepath to save the model
+    """
+    torch.save(model, destination)
+    logger.info(f"Torch model saved at: {destination}")
+
+@ensure_annotations
+def load_torch_model(source: Path) -> Any:
+    """load PyTorch model
+
+    Args:
+        source (Path): path to binary file
+
+    Returns:
+        Any: object stored in the file
+    """
+    model: object = torch.load(source)
+    logger.info(f"binary file loaded from: {source}")
+    return model
 
 

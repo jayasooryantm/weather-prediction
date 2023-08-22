@@ -1,1 +1,8 @@
-key: val
+pytorch_model_parameters:
+  input_dim: 14
+  output_dim: 1
+  hidden_dim: 20
+  learning_rate: 0.02
+  batch_size: 1
+  num_batches: 1
+  num_epochs: 100
