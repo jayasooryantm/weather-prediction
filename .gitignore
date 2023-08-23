@@ -162,8 +162,3 @@ cython_debug/
 #custom added
 token.txt
 status.txt
-*.csv
-api_data*.json
-data.zip
-*.pth
-
