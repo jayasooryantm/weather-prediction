@@ -23,3 +23,11 @@ model_trainer:
   train_data_path: artifacts/data_transformation/weather_data.csv
   test_data_path: artifacts/data_transformation/weather_data_test.csv
   model_path: artifacts/model_trainer/models/model.pth
+
+model_eval:
+  root_dir: artifacts/model_evaluation
+  model_path: artifacts/model_trainer/models/model.pth
+  test_data_path: artifacts/model_evaluation/weather_data_test.csv
+  mlflow_uri: https://dagshub.com/jayasooryan.tm/weather-prediction.mlflow
+  mlflow_user: jayasooryan.tm
+  mlflow_key: 4cf05aa75bfc9ab0b4f4ac28b1ad79fdd287fd24

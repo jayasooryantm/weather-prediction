@@ -134,7 +134,7 @@ def save_torch_model(model: Module, destination:str):
     logger.info(f"Torch model saved at: {destination}")
 
 @ensure_annotations
-def load_torch_model(source: Path) -> Any:
+def load_torch_model(source: str) -> Module:
     """load PyTorch model
 
     Args:
@@ -144,7 +144,7 @@ def load_torch_model(source: Path) -> Any:
         Any: object stored in the file
     """
     model: object = torch.load(source)
-    logger.info(f"binary file loaded from: {source}")
+    logger.info(f"Torch model loaded from: {source}")
     return model
 
 

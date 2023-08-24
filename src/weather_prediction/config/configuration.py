@@ -5,7 +5,8 @@ from weather_prediction.utils.common import read_yaml, create_directories
 from weather_prediction.entity.config_entity import (DataIngestionConfig,
                                                      DataValidationConfig,
                                                      DataTransformationConfig,
-                                                     ModelTrainerConfig)
+                                                     ModelTrainerConfig,
+                                                     ModelEvalConfig)
 
 
 class ConfigurationManager:
@@ -74,8 +75,7 @@ class ConfigurationManager:
         schema = self.schema.model_trainer
         params = self.params.pytorch_model_parameters
 
-        create_directories([config.root_dir])
-        create_directories([os.path.dirname(config.model_path)])
+        create_directories([config.root_dir, os.path.dirname(config.model_path)])
 
         model_trainer_config = ModelTrainerConfig(
             root_dir=config.root_dir,
@@ -89,3 +89,24 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+
+    def get_model_eval_config(self) -> ModelEvalConfig:
+        config = self.config.model_eval
+        schema = self.schema.model_trainer
+        params = self.params.pytorch_model_parameters
+
+        create_directories([config.root_dir])
+
+        model_eval_config = ModelEvalConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path=config.model_path,
+            target_column_names=schema.target_column_names,
+            feature_columns_names=schema.feature_columns_names,
+            parameters=params,
+            mlflow_uri=config.mlflow_uri,
+            mlflow_user=config.mlflow_user,
+            mlflow_key=config.mlflow_key
+        )
+
+        return model_eval_config

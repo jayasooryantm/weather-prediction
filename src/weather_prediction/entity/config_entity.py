@@ -46,3 +46,16 @@ class ModelTrainerConfig:
     target_column_names: list
     pytorch_model_parameters: dict
 
+@dataclass(frozen=True)
+class ModelEvalConfig:
+    root_dir: Path
+    model_path: str
+    test_data_path: Path
+    feature_columns_names: list
+    target_column_names: list
+    parameters: dict
+    mlflow_uri: str
+    mlflow_user: str
+    mlflow_key: str
+
+
