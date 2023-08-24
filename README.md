@@ -9,3 +9,11 @@ end-to-end Machine Learning project to build a weather prediction app.
 4. Implemented pipeline for data ingestion
 5. wrote modular code for data validation steps
 6. Implemented pipeline for data validation
+7. Implemented pipeline for data transformation 
+8. Implemented pipeline for model training
+9. Implemented pipeline for model evaluation
+10. Model performance enhancement `Pending`
+11. Model deployment `Pending`
+12. Automating pipeline `Pending`
+13. Data drift monitoring `Pending`
+
