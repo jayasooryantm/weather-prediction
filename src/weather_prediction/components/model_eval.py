@@ -3,6 +3,7 @@ import torch
 import torch.nn.functional as F
 import mlflow
 import os
+import shutil
 from urllib.parse import urlparse
 
 from weather_prediction.utils.common import logger, load_torch_model
@@ -11,6 +12,9 @@ from weather_prediction.config.configuration import ModelEvalConfig
 class ModelEvaluation:
     def __init__(self, config:ModelEvalConfig):
         self.config = config
+
+    def prepare_eval_data(self):
+        shutil.copy("artifacts/data_transformation/weather_data.csv", self.config.test_data_path)
 
     def prepare_test_data(self, data:pd.DataFrame, features: list, target: list):
         X = torch.tensor(data[features].values, dtype=torch.float32)

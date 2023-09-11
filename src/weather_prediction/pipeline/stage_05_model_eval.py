@@ -10,6 +10,8 @@ class ModelEvalPipeline:
         config = ConfigurationManager()
         model_eval_config = config.get_model_eval_config()
         model_eval = ModelEvaluation(model_eval_config)
+        logger.info("Preparing evaluation data")
+        model_eval.prepare_eval_data()
         logger.info(f"Setting up MLflow")
         model_eval.setup_mlflow_config()
         logger.info(f"Starting Model Evaluation...")
