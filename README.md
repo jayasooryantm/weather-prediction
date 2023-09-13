@@ -12,8 +12,8 @@ end-to-end Machine Learning project to build a weather prediction app.
 7. Implemented pipeline for data transformation 
 8. Implemented pipeline for model training
 9. Implemented pipeline for model evaluation
-10. Model performance enhancement `Working`
-11. Model deployment `Pending`
+10. Model deployment
+11. Model performance enhancement `Working`
 12. Automating pipeline `Pending`
 13. Data drift monitoring `Pending`
 
