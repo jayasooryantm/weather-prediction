@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/jaya/Documents/GitHub/weatherApp/mlruns/0/b0aa4300edf04f22ba41d4fb058c31f6/artifacts
+end_time: 1692892521256
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b0aa4300edf04f22ba41d4fb058c31f6
+run_name: flawless-gnat-195
+run_uuid: b0aa4300edf04f22ba41d4fb058c31f6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692892517254
+status: 4
+tags: []
+user_id: jaya

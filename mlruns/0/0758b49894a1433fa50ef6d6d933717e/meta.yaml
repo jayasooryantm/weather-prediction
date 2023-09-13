@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/jaya/Documents/GitHub/weatherApp/mlruns/0/0758b49894a1433fa50ef6d6d933717e/artifacts
+end_time: 1692892451193
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0758b49894a1433fa50ef6d6d933717e
+run_name: delicate-shrimp-157
+run_uuid: 0758b49894a1433fa50ef6d6d933717e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692892451175
+status: 4
+tags: []
+user_id: jaya
