@@ -1,5 +1,4 @@
 import streamlit as st
-from weather_prediction.utils.common import load_torch_model
 
 
 st.title("Weather Prediction")
