@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 import torch
 from torch.nn import Module
+from weather_prediction.components.model import WeatherModel
 
 
 @ensure_annotations
@@ -130,11 +131,11 @@ def save_torch_model(model: Module, destination:str):
     :param model: model object
     :param destination: filepath to save the model
     """
-    torch.save(model, destination)
+    torch.save(model.state_dict(), destination)
     logger.info(f"Torch model saved at: {destination}")
 
 @ensure_annotations
-def load_torch_model(source: str) -> Module:
+def load_torch_model(source: str, parameters) -> Module:
     """load PyTorch model
 
     Args:
@@ -143,7 +144,9 @@ def load_torch_model(source: str) -> Module:
     Returns:
         Any: object stored in the file
     """
-    model: object = torch.load(source)
+    model = WeatherModel(parameters)
+    model.load_state_dict(torch.load(source))
+    model.eval()
     logger.info(f"Torch model loaded from: {source}")
     return model
 

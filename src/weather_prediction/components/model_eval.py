@@ -27,7 +27,7 @@ class ModelEvaluation:
         os.environ["MLFLOW_TRACKING_PASSWORD"] = self.config.mlflow_key
 
     def eval(self):
-        model = load_torch_model(self.config.model_path)
+        model = load_torch_model(self.config.model_path, self.config.parameters)
         test_data = pd.read_csv(self.config.test_data_path)
         X, y = self.prepare_test_data(test_data, self.config.feature_columns_names, self.config.target_column_names)
 
