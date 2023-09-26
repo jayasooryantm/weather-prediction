@@ -5,6 +5,11 @@ import webbrowser
 import yaml
 from box import ConfigBox
 
+st.set_page_config(
+    page_title="Atmospheric Condition Forecasting",
+    page_icon="🌦️"
+)
+
 with open("templates/eval_params.yaml") as yaml_file:
     model_parameters = ConfigBox(yaml.safe_load(yaml_file))
 
@@ -63,7 +68,7 @@ with torch.inference_mode():
      wind_direction, pressure, wind_speed, temperature, visibility, weather_type = model(X)
 
 
-st.title("Atmospheric Condition Forecasting")
+st.title("Multi-Output Model Atmospheric Condition Forecasting")
 st.warning("Model is inaccurate: Values are misleading [Model enhancement in progress]")
 
 st.divider()
