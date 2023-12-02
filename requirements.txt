@@ -37,6 +37,7 @@ Flask==2.3.2
 Flask-Cors==4.0.0
 fonttools==4.42.0
 fqdn==1.5.1
+fsspec==2023.10.0
 gitdb==4.0.10
 GitPython==3.1.32
 gunicorn==20.1.0
@@ -93,7 +94,7 @@ pandocfilters==1.5.0
 parso==0.8.3
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow
+Pillow==9.5.0
 platformdirs==3.10.0
 prometheus-client==0.17.1
 prompt-toolkit==3.0.39
@@ -144,7 +145,7 @@ tinycss2==1.2.1
 toml==0.10.2
 tomli==2.0.1
 toolz==0.12.0
-torch==2.0.1
+torch==2.1.1
 tornado==6.3.3
 tqdm==4.66.1
 traitlets==5.9.0

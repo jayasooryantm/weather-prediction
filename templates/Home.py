@@ -84,5 +84,5 @@ col3.metric("Weather Type", str(round(weather_type.item())))
 
 st.divider()
 
-if st.button("GitHub Repo"):
-     webbrowser.open("https://github.com/jayasooryantm/weather-prediction/tree/main")
+st.markdown("[GitHub](https://github.com/jayasooryantm/weather-prediction/tree/main)")
+st.markdown("[DagsHub](https://dagshub.com/jayasooryan.tm/weather-prediction)")

@@ -23,9 +23,7 @@ st.markdown("1. Created the production level ML template  ✅\n"
 "8. Implemented pipeline for model training ✅\n"
 "9. Implemented pipeline for model evaluation ✅\n"
 "10. Model deployment ✅\n"
-"11. Model performance enhancement `Working` \n"
-"12. Automating pipeline `Pending` \n"
-"13. Data drift monitoring `Pending` \n")
+"11. Model performance enhancement `Working` \n")
 
 st.subheader("Data Collection")
 st.markdown("Data is collected from [Met Office API](https://www.metoffice.gov.uk/services/data/met-office-weather-datahub) "
