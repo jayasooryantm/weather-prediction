@@ -69,7 +69,7 @@ def normalize_data(df):
     df = scaler.fit_transform(df)
     return df
 input_data = normalize_data([8,14.0,83.4,1012.0,8.0,16.5,17000.0,12,0,13.7,120,14,8,2023])
-X = torch.tensor(input_data, dtype=torch.float32)
+X = torch.tensor(input_data, dtype=torch.float32).reshape(1, -1)
 
 
 
