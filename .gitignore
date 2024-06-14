@@ -167,3 +167,17 @@ data.zip
 
 
 data
+/artifacts
+/artifacts
+/artifacts
+/artifacts/data_transformation
+/artifacts/data_ingestion
+/artifacts
+/artifacts
+artifacts/model_trainer/models/model.pth
+artifacts/model_evaluation/weather_data_test.csv
+artifacts/data_validation/weather_data.csv
+artifacts/data_validation/weather_data.csv
+artifacts/data_transformation/weather_data_test.csv
+artifacts/data_transformation/weather_data.csv
+artifacts/data_ingestion/data.zip
