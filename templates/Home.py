@@ -2,6 +2,7 @@ import streamlit as st
 import torch
 from torch import nn
 import webbrowser
+from sklearn.preprocessing import StandardScaler
 
 st.set_page_config(
     page_title="Atmospheric Condition Forecasting",
