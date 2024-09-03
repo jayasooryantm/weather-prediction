@@ -1,4 +1,5 @@
 import streamlit as st
+import numpy as np
 import torch
 from torch import nn
 import webbrowser
@@ -64,13 +65,14 @@ weather_types = { 'NA': 'Not available', '-1': 'Trace rain', '0': 'Clear night',
 compass_directions_map = {1: 'N', 2: 'NNE', 3: 'NE', 4: 'ENE', 5: 'E', 6: 'ESE', 7: 'SE', 8: 'SSE', 9: 'S', 10: 'SSW', 11: 'SW', 12: 'WSW', 13: 'W', 14: 'WNW', 15: 'NW', 16: 'NNW'}
 MODEL_PATH = "artifacts/model_trainer/models/model.pth"
 
-def normalize_data(df):
+def normalize_data(data):
+    data = np.array(data).reshape(1, -1) 
     scaler = StandardScaler()
-    df = scaler.fit_transform(df)
-    return df
-input_data = normalize_data([8,14.0,83.4,1012.0,8.0,16.5,17000.0,12,0,13.7,120,14,8,2023])
+    norm_data = scaler.fit_transform(data)
+    return norm_data
+    
+input_data = normalize_data([1,8.0,46.8,1020.0,3.0,15.9,55000.0,8,0,4.7,900,12,6,2024])
 X = torch.tensor(input_data, dtype=torch.float32)
-X = X.reshape(1, -1)
 
 
 
