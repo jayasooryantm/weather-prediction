@@ -86,9 +86,8 @@ model.eval()
 with torch.inference_mode():
      wind_direction, pressure, wind_speed, temperature, visibility, weather_type = model(X)
 
-outputs = torch.stack([wind_direction, pressure, wind_speed, temperature, visibility, weather_type], dim=1).numpy()
-denorm_data = scaler.inverse_transform(outputs)
-denorm_data = denorm_data.flatten().tolist()
+output_numpy = output.numpy().reshape(1, -1)
+denorm_data = scaler.inverse_transform(output_numpy)
 
 st.write(denorm_data)
 st.title("Multi-Output Model Atmospheric Condition Forecasting")
