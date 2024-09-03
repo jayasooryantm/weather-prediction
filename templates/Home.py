@@ -86,7 +86,7 @@ model.eval()
 with torch.inference_mode():
      wind_direction, pressure, wind_speed, temperature, visibility, weather_type = model(X)
 
-st.write(wind_direction, type(wind_direction))
+st.write(wind_direction.item(), type(wind_direction.item()))
 # inv_wind_direction = scaler.inverse_transform(wind_direction.numpy())[0]
 # inv_pressure = scaler.inverse_transform(pressure.numpy())[0]
 # inv_wind_speed = scaler.inverse_transform(wind_speed.numpy())[0]
