@@ -86,14 +86,14 @@ model.eval()
 with torch.inference_mode():
      wind_direction, pressure, wind_speed, temperature, visibility, weather_type = model(X)
 
-st.write(wind_direction.item(), type(wind_direction.item()))
-# inv_wind_direction = scaler.inverse_transform(wind_direction.numpy())[0]
-# inv_pressure = scaler.inverse_transform(pressure.numpy())[0]
-# inv_wind_speed = scaler.inverse_transform(wind_speed.numpy())[0]
-# inv_temperature = scaler.inverse_transform(temperature.numpy())[0]
-# inv_visibility = scaler.inverse_transform(visibility.numpy())[0]
 
-# st.write(inv_wind_direction, inv_pressure, inv_wind_speed, inv_temperature, inv_visibility)
+inv_wind_direction = scaler.inverse_transform(wind_direction)
+inv_pressure = scaler.inverse_transform(pressure.item())
+inv_wind_speed = scaler.inverse_transform(wind_speed.item())
+inv_temperature = scaler.inverse_transform(temperature.item())
+inv_visibility = scaler.inverse_transform(visibility.item())
+
+st.write(inv_wind_direction, inv_pressure, inv_wind_speed, inv_temperature, inv_visibility)
 st.title("Multi-Output Model Atmospheric Condition Forecasting")
 st.warning("Model is inaccurate: Values are misleading [Model enhancement in progress]")
 
