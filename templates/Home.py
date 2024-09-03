@@ -87,7 +87,6 @@ with torch.inference_mode():
      output = model(X)
 
 
-wind_direction, pressure, wind_speed, temperature, visibility, weather_type = **output
 output_numpy = output.numpy().reshape(1, -1)
 denorm_data = scaler.inverse_transform(output_numpy)
 
@@ -98,13 +97,13 @@ st.warning("Model is inaccurate: Values are misleading [Model enhancement in pro
 st.divider()
 
 col1, col2, col3 = st.columns(3)
-
+"""
 col1.metric("Wind Direction", str(round(wind_direction.item())))
 col1.metric("Pressure", str(round(pressure.item())) + " hpa")
 col2.metric("Wind Speed", str(round(wind_speed.item())) + " Mph")
 col2.metric("Temperature", str(round(temperature.item())) + " °C")
 col3.metric("Visibility", str(round(visibility.item())) + " m")
-col3.metric("Weather Type", str(round(weather_type.item())))
+col3.metric("Weather Type", str(round(weather_type.item())))"""
 
 st.divider()
 
