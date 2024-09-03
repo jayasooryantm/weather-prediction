@@ -71,7 +71,7 @@ def normalize_data(data):
     norm_data = scaler.fit_transform(data)
     return norm_data
     
-input_data = normalize_data([1,8.0,46.8,1020.0,3.0,15.9,55000.0,8,0,4.7,900,12,6,2024])
+input_data = normalize_data([9,14.0,84.1,1016.0,8.0,12.4,30000.0,2,1,9.8,1320,27,5,2024])
 X = torch.tensor(input_data, dtype=torch.float32)
 
 
