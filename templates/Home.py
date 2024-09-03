@@ -84,8 +84,10 @@ model.load_state_dict(torch.load(MODEL_PATH))
 model.eval()
 
 with torch.inference_mode():
-     wind_direction, pressure, wind_speed, temperature, visibility, weather_type = model(X)
+     output = model(X)
 
+
+wind_direction, pressure, wind_speed, temperature, visibility, weather_type = **output
 output_numpy = output.numpy().reshape(1, -1)
 denorm_data = scaler.inverse_transform(output_numpy)
 
