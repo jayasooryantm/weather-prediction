@@ -22,9 +22,9 @@ model_parameters = {
 
 class WeatherModel(nn.Module):
     def __init__(self, parameters):
-        input_dim=parameters.input_dim
-        output_dim=parameters.output_dim
-        hidden_dim=parameters.hidden_dim
+        input_dim=14
+        output_dim=1
+        hidden_dim=20
 
         super(WeatherModel, self).__init__()
 
