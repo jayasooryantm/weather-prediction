@@ -96,12 +96,12 @@ st.divider()
 
 col1, col2, col3 = st.columns(3)
 
-col1.metric("Wind Direction", str(wind_direction.item()))
-col1.metric("Pressure", str(pressure.item()) + " hpa")
-col2.metric("Wind Speed", str(wind_speed.item()) + " Mph")
-col2.metric("Temperature", str(temperature.item()) + " °C")
-col3.metric("Visibility", str(visibility.item()) + " m")
-col3.metric("Weather Type", str(weather_type.item()))
+col1.metric("Wind Direction", str(round(wind_direction.item())))
+col1.metric("Pressure", str(round(pressure.item())) + " hpa")
+col2.metric("Wind Speed", str(round(wind_speed.item())) + " Mph")
+col2.metric("Temperature", str(round(temperature.item())) + " °C")
+col3.metric("Visibility", str(round(visibility.item())) + " m")
+col3.metric("Weather Type", str(round(weather_type.item())))
 
 st.divider()
 
