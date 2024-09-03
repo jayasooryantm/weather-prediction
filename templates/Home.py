@@ -102,7 +102,7 @@ col1.metric("Pressure", str(round(pressure.item())) + " hpa")
 col2.metric("Wind Speed", str(round(wind_speed.item())) + " Mph")
 col2.metric("Temperature", str(round(temperature.item())) + " °C")
 col3.metric("Visibility", str(round(visibility.item())) + " m")
-col3.metric("Weather Type", weather_types[str(round(weather_type.item()))])
+col3.metric("Weather Type", str(round(weather_type.item())))
 
 st.divider()
 
