@@ -10,15 +10,15 @@ st.set_page_config(
     page_icon="🌦️"
 )
 
-# model_parameters = {
-#   "input_dim": 14,
-#   "output_dim": 1,
-#   "hidden_dim": 20,
-#   "learning_rate": 0.001,
-#   "batch_size": 100,
-#   "num_batches": 62,
-#   "num_epochs": 100
-# }
+model_parameters = {
+  "input_dim": 14,
+  "output_dim": 1,
+  "hidden_dim": 20,
+  "learning_rate": 0.001,
+  "batch_size": 100,
+  "num_batches": 62,
+  "num_epochs": 100
+}
 
 class WeatherModel(nn.Module):
     def __init__(self, parameters):
