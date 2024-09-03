@@ -65,13 +65,16 @@ weather_types = { 'NA': 'Not available', '-1': 'Trace rain', '0': 'Clear night',
 compass_directions_map = {1: 'N', 2: 'NNE', 3: 'NE', 4: 'ENE', 5: 'E', 6: 'ESE', 7: 'SE', 8: 'SSE', 9: 'S', 10: 'SSW', 11: 'SW', 12: 'WSW', 13: 'W', 14: 'WNW', 15: 'NW', 16: 'NNW'}
 MODEL_PATH = "artifacts/model_trainer/models/model.pth"
 
-def normalize_data(data):
-    data = np.array(data).reshape(1, -1) 
-    scaler = StandardScaler()
-    norm_data = scaler.fit_transform(data)
-    return norm_data
-    
-input_data = normalize_data([9,13.0,87.9,1011.0,6.0,16.0,26000.0,12,0,14.0,180,14,8,2023])
+
+
+
+data = [9,13.0,87.9,1011.0,6.0,16.0,26000.0,12,0,14.0,180,14,8,2023]
+
+data = np.array(data).reshape(1, -1) 
+scaler = StandardScaler()
+norm_data = scaler.fit_transform(data)
+
+input_data = norm_data
 X = torch.tensor(input_data, dtype=torch.float32)
 
 
@@ -83,7 +86,10 @@ model.eval()
 with torch.inference_mode():
      wind_direction, pressure, wind_speed, temperature, visibility, weather_type = model(X)
 
-st.write(wind_direction, pressure, wind_speed, temperature, visibility, weather_type)
+denorm_data = scaler.inverse_transform([wind_direction, pressure, wind_speed, temperature, visibility, weather_type])
+# Convert denormalized data back to a list (optional)
+denorm_data = denorm_data.flatten().tolist()
+st.write(denorm_data)
 st.title("Multi-Output Model Atmospheric Condition Forecasting")
 st.warning("Model is inaccurate: Values are misleading [Model enhancement in progress]")
 
