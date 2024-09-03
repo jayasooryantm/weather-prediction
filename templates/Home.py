@@ -87,7 +87,7 @@ with torch.inference_mode():
      wind_direction, pressure, wind_speed, temperature, visibility, weather_type = model(X)
 
 
-inv_wind_direction = scaler.inverse_transform(wind_direction)
+inv_wind_direction = scaler.inverse_transform(wind_direction.item())
 inv_pressure = scaler.inverse_transform(pressure.item())
 inv_wind_speed = scaler.inverse_transform(wind_speed.item())
 inv_temperature = scaler.inverse_transform(temperature.item())
