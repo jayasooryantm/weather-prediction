@@ -87,7 +87,7 @@ with torch.inference_mode():
      wind_direction, pressure, wind_speed, temperature, visibility, weather_type = model(X)
 
 output_data = [wind_direction.item(), pressure.item(), wind_speed.item(), temperature.item(), visibility.item()]
-output_data = output_data.reshape(1, -1)
+output_data = np.array(output_data).reshape(1, -1)
 inv_output_data = scaler.inverse_transform(output_data)
 
 st.write(inv_output_data)
