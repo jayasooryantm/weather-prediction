@@ -83,7 +83,7 @@ model.eval()
 with torch.inference_mode():
      wind_direction, pressure, wind_speed, temperature, visibility, weather_type = model(X)
 
-
+st.write(wind_direction, pressure, wind_speed, temperature, visibility, weather_type)
 st.title("Multi-Output Model Atmospheric Condition Forecasting")
 st.warning("Model is inaccurate: Values are misleading [Model enhancement in progress]")
 
