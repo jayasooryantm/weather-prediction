@@ -86,10 +86,11 @@ model.eval()
 with torch.inference_mode():
      wind_direction, pressure, wind_speed, temperature, visibility, weather_type = model(X)
 
-#denorm_data = scaler.inverse_transform([wind_direction, pressure, wind_speed, temperature, visibility, weather_type])
-# Convert denormalized data back to a list (optional)
-#denorm_data = denorm_data.flatten().tolist()
-st.write("denorm_data")
+outputs = torch.stack([wind_direction, pressure, wind_speed, temperature, visibility, weather_type], dim=1).numpy()
+denorm_data = scaler.inverse_transform(outputs)
+denorm_data = denorm_data.flatten().tolist()
+
+st.write(denorm_data)
 st.title("Multi-Output Model Atmospheric Condition Forecasting")
 st.warning("Model is inaccurate: Values are misleading [Model enhancement in progress]")
 
