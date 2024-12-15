@@ -9,7 +9,7 @@ st.divider()
 
 st.write("The project is meant to implement production level code structure, best practises and production tools and strategies. "
         "Building a highly accurate model is not the primary goal of this project. Building an end-to-end ML project is "
-        "significantly complex and difficult task, this project implementation would reavel the challenges and hidden works "
+        "significantly complex and difficult task, this project implementation would reveal the challenges and hidden works "
         "that real world ML project possess.")
 
 st.subheader("Project Development Status")
@@ -23,7 +23,7 @@ st.markdown("1. Created the production level ML template  ✅\n"
 "8. Implemented pipeline for model training ✅\n"
 "9. Implemented pipeline for model evaluation ✅\n"
 "10. Model deployment ✅\n"
-"11. Model performance enhancement `Working` \n")
+"11. Model performance enhancement `Version 2 Deployed: Working` \n")
 
 st.subheader("Data Collection")
 st.markdown("Data is collected from [Met Office API](https://www.metoffice.gov.uk/services/data/met-office-weather-datahub) "
